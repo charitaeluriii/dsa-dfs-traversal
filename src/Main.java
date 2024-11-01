@@ -1,30 +1,30 @@
 import java.util.*;
 class Graph{
     int vertices;
-    LinkedList<Integer> adjlist[];
+    LinkedList<Integer> adjList[];
     public Graph(int vertices){
         this.vertices = vertices;
-        adjlist = new LinkedList[vertices];
+        adjList = new LinkedList[vertices];
         for(int i = 0; i<vertices;i++){
-            adjlist[i]= new LinkedList<>();
+            adjList[i]= new LinkedList<>();
         }
     }
     public void addEdge(int source , int dest){
-        adjlist[source].add(dest);
-        adjlist[dest].add(source);
+        adjList[source].add(dest);
+        adjList[dest].add(source);
     }
     public void DFS(int startvertex){
-        boolean visited[] = new boolean[vertices];
+        boolean visit[] = new boolean[vertices];
         Stack<Integer> stack = new Stack<>();
         stack.push(startvertex);
-        visited[startvertex] = true;
+        visit[startvertex] = true;
         while(!stack.isEmpty()){
             int currentvertex = stack.pop();
             System.out.print(currentvertex+" ");
-            for(int neighbor : adjlist[currentvertex]){
-                if(!visited[neighbor]){
+            for(int neighbor : adjList[currentvertex]){
+                if(!visit[neighbor]){
                     stack.push(neighbor);
-                    visited[neighbor] = true;
+                    visit[neighbor] = true;
                 }
             }
         }
