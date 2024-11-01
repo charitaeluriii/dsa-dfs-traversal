@@ -2,6 +2,7 @@ import java.util.*;
 class Graph{
     int vertices;
     LinkedList<Integer>[] adjList;
+    @SuppressWarnings("unchecked")
     public Graph(int vertices){
         this.vertices = vertices;
         adjList = new LinkedList[vertices];
