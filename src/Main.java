@@ -1,7 +1,7 @@
 import java.util.*;
 class Graph{
     int vertices;
-    LinkedList<Integer> adjList[];
+    LinkedList<Integer>[] adjList;
     public Graph(int vertices){
         this.vertices = vertices;
         adjList = new LinkedList[vertices];
@@ -14,7 +14,7 @@ class Graph{
         adjList[dest].add(source);
     }
     public void DFS(int startvertex){
-        boolean visit[] = new boolean[vertices];
+        boolean[] visit = new boolean[vertices];
         Stack<Integer> stack = new Stack<>();
         stack.push(startvertex);
         visit[startvertex] = true;
